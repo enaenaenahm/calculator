@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор</h1>
+        
+        <div class="input-group">
+            <input type="number" id="num1" placeholder="Первое число">
+            <select id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
+            <input type="number" id="num2" placeholder="Второе число">
+        </div>
+        
+        <button id="calculate">Вычислить</button>
+        
+        <div id="result" class="result"></div>
+        
+        <div class="history">
+            <h3>История операций:</h3>
+            <div id="history-content"></div>
+        </div>
+        <footer class="footer">
+            <p>Проект разработан: Энже Ахметова</p>
+        </footer>
+    </div>
+
+    <!-- Использование url_for для правильной загрузки JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
